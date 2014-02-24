@@ -1,0 +1,3 @@
+Before Ben Bitdiddle starts thinking interpreter evaluation, he should probably consider changing his last name which can be done rather cheaply these days.
+
+Now that that's out of the way, Ben would probably realize that `(define (p) (p))` is an infinitely recursive function. Since applicative-order evaluation attempts to, first, evaluate operators and operands, this recursive function would be evaluated before the if-statement can be reached. The program would be stuck in an infinite loop. Normal-order on the other hand would run the if-statement procedure before evaluating `(p)`. The program would return 0, and things would work just fine.
